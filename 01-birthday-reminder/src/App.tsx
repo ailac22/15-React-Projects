@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState }  from 'react';
+import './App.scss';
+import { PersonList } from './Types/PersonListType';
+import List from './Components/List'
+import data from './data.js'
 
 function App() {
+
+  const [people, setPeople] = useState<PersonList>(() => {
+    return data;
+  })
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <main>
+    <List people={people} onClick={() => {setPeople([])}}></List> 
+  </main>)
 }
 
 export default App;
+
+
