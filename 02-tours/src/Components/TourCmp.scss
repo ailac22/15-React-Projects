@@ -1,0 +1,48 @@
+
+.tour-container {
+
+    background-color: white;
+
+    img {
+
+        width: 100%;
+        height: 20em;
+    }
+
+    footer {
+
+        padding: 2rem;
+    }
+
+    .readMoreBtn {
+        background: none;
+        border: none;
+        color: deepskyblue;
+        cursor: pointer;
+    }
+
+    .not-interested-btn {
+        display: block;
+        width: 15rem;
+        height: 1.5rem;
+        margin: 1em auto;
+        background: none;
+        border: 1px solid red;
+        border-radius: 5px;
+        cursor: pointer;
+        color: red;
+
+        font: {
+            
+            weight: bold;
+        }
+
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    margin: 2rem 0;
+}
