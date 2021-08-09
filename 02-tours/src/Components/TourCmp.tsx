@@ -16,11 +16,14 @@ const TourCmp: React.FC<TourCmpProps> = ({tour: { id,image,info,name,price }, re
         <img src={image} alt={name}/> 
         <footer>
             <div className="info">
-                <h4>{name}</h4>
-                <h4>{price}</h4>
+                <h4 className="Name">{name}</h4>
+                <h4 className="Price">{price}€</h4>
             </div>
-            <p>{readMore ?  info: `${ info.substr(0,150)}...` }
-            <button className="readMoreBtn" onClick={() => setReadMore(!readMore)}> { readMore ? "Read more" : "Read less" } </button></p>
+            <p className="Main-body">{readMore ?  info: `${ info.substr(0,150)}...` }
+            <button className="readMoreBtn" onClick={() => setReadMore(!readMore)}> 
+            { readMore ? "Read more" : "Read less" } 
+            </button>
+            </p>
             
         <button className="not-interested-btn" onClick={() => removeTour(id)}>Not interested</button>
         </footer>

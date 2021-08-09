@@ -11,11 +11,16 @@ function App() {
   console.log(tours)
   async function fetchTours(){
     setLoaded(false);
-    const response = await fetch("https://course-api.com/react-tours-project");
-    const t = await response.json();
-    console.log(t)
-    setTours(t)
-    setLoaded(true)
+    try {
+      const response = await fetch("https://course-api.com/react-tours-project");
+      const t = await response.json();
+      console.log(t)
+      setTours(t)
+      setLoaded(true)
+    }
+    catch (error){
+      console.error(error)
+    }
   }
 
   useEffect(() => {
@@ -33,15 +38,19 @@ function App() {
   if (!loaded){
     return (
       <main>
-        <div>Cargando</div>
+        <div className="Loading">
+          <h1>Loading...</h1>
+        </div>
       </main>
       )
   }
   else if (tours?.length === 0){
     return (
     <main>
-      <h2>No tours left</h2>
-      <button onClick={() => fetchTours()}>Refresh</button>
+      <div className="No-tours">
+        <h2>No tours left</h2>
+        <button className="Refresh" onClick={() => fetchTours()}>Refresh</button>
+      </div>
     </main>
     )
   }
@@ -49,7 +58,9 @@ function App() {
 
     return (
       <main>
-        <h2>Our tours</h2>
+        <div className="Title">
+          <h2>Our tours</h2>
+        </div>
         <TourList tours={tours} removeTour={removeTour}></TourList>
       </main>
       )

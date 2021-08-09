@@ -1,8 +1,11 @@
 
+@use '../Style/_common';
+
 .tour-container {
 
     background-color: white;
 
+    box-shadow: rgb(212, 212, 212) 3px 3px 10px;
     img {
 
         width: 100%;
@@ -17,14 +20,14 @@
     .readMoreBtn {
         background: none;
         border: none;
-        color: deepskyblue;
+        color: common.$blue1;
         cursor: pointer;
     }
 
     .not-interested-btn {
         display: block;
         width: 15rem;
-        height: 1.5rem;
+        height: 1.75rem;
         margin: 1em auto;
         background: none;
         border: 1px solid red;
@@ -32,9 +35,14 @@
         cursor: pointer;
         color: red;
 
+        letter-spacing:0.1rem;
         font: {
-            
-            weight: bold;
+            size: 1rem;
+        }
+
+        &:hover {
+            background-color: red;
+            color: white;
         }
 
     }
@@ -42,6 +50,18 @@
     .info {
         display: flex;
         justify-content: space-between;
+        letter-spacing: 0.1rem;
+    }
+
+    .Price {
+        background-color: common.$blue2;
+
+        color: common.$blue1;
+        padding:0.25rem 0.75rem;
+    }
+
+    .Main-body {
+        color: rgb(107, 107, 107)
     }
 
     margin: 2rem 0;
