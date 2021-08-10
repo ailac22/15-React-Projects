@@ -1,15 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import { ReviewCmp } from './features/counter/ReviewCmp';
-import './App.css';
-/*import { Review } from './Types/Review'*/
+import './App.scss';
+import { Review } from './Types/Review'
 
 function App() {
   return (
 
     <main>
-      <h2>Our reviews</h2>
-      <ReviewCmp></ReviewCmp>
+      <div className="content">
+        <h1>Our reviews</h1>
+        <ReviewCmp></ReviewCmp>
+      </div>
     </main>
 
 

@@ -1,5 +1,25 @@
 
+.section {
+    width: 45rem;
+    height:23rem;
+    background: white;
+    text-align: center;
+}
 
+
+
+.containerInfo {
+    $imgWidth: 100px;
+    
+    
+    width: $imgWidth;
+    margin: 1rem auto;
+    img {
+        
+        width: $imgWidth;
+        height:100px;
+    }
+}
 
 // .row {
 //   display: flex;

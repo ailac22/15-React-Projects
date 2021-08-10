@@ -14,7 +14,7 @@ const TourList: React.FC<TourListProps> = ({tours, removeTour}) => {
 
         <div>
         {tours?.map((tour:Tour) => 
-                <TourCmp tour={tour} removeTour={removeTour}></TourCmp>
+                <TourCmp {...tour} removeTour={removeTour}></TourCmp>
         )}
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { FaBeer } from 'react-icons/fa';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
@@ -8,7 +8,7 @@ import {
   random,
   selectReview,
 } from './indexChangerSlice';
-import styles from './Counter.module.scss';
+import styles from './ReviewCmp.module.scss';
 
 export function ReviewCmp() {
 
@@ -17,10 +17,16 @@ export function ReviewCmp() {
 
 
   //const incrementValue = Number(incrementAmount) || 0;
-
+//className={styles.fa} 
   return (
-    <div>
-      <p>{id}</p>
+    <section className={styles.section}>
+      
+      <div className={styles.containerInfo}>
+        <span>
+          <FaBeer /> 
+        </span>
+        <img src={image} alt={name} />
+      </div>
       <p>{name}</p>
       <p>{job}</p>
       <p>{text}</p>
@@ -29,7 +35,7 @@ export function ReviewCmp() {
         <button onClick={() => dispatch(increment())} >&gt;</button>
       </div>
       <button onClick={() => dispatch(random())}>Surprise me plz ☺️</button>
-    </div>
+    </section>
   )
 }
 
@@ -77,3 +83,6 @@ export function ReviewCmp() {
           Add If Odd
         </button>
       </div> */
+
+
+      
