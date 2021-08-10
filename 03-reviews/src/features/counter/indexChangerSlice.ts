@@ -1,14 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
+import { RootState } from '../../app/store';
+import { Review } from '../../Types/Review'
+import reviews from '../../data'
+import { Random } from "random-js";
+
+
+const rand: Random = new Random(); // uses the nativeMath engine
+
 
 export interface ShowPersonState {
   index: number;
+  reviews: Review[];
+  currentReview: Review;
 }
 
-const initialState: ShowPersonState = {
-  index: 0
-};
 
+const currentReview:Review = reviews[0];
+
+const initialState: ShowPersonState = {
+  index: 0,
+  reviews: reviews,
+  currentReview: currentReview
+};
 
 export const indexChangerSlice = createSlice({
   name: 'indexChanger',
@@ -16,18 +29,22 @@ export const indexChangerSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.index += 1;
+      state.index = Math.min(state.index + 1,state.reviews.length - 1);
+      state.currentReview = state.reviews[state.index]
     },
     decrement: (state) => {
-      state.index -= 1;
+      state.index = Math.max(state.index - 1,0);
+      state.currentReview = state.reviews[state.index]
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
     random: (state) => {
-      state.index += 0;
+      
+      let value = -1;
+      do {
+        value = rand.integer(0, state.reviews.length - 1);
+      } while (value === state.index);
+
+      state.index = value;
+      state.currentReview = state.reviews[state.index]
     },
   },
 
@@ -38,7 +55,7 @@ export const { increment, decrement, random } = indexChangerSlice.actions;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectIndex = (state: RootState) => state.index.index;
+export const selectReview = (state: RootState) => state.reviews.currentReview;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

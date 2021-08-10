@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import indexChangerReducer from '../features/counter/indexChangerSlice';
+import reviewsReducer from '../features/counter/indexChangerSlice';
 
 export const store = configureStore({
   reducer: {
-    index: indexChangerReducer,
+    reviews: reviewsReducer,
   },
 });
 

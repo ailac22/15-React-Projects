@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
 
+
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
   decrement,
   increment,
   random,
-  selectIndex,
+  selectReview,
 } from './indexChangerSlice';
 import styles from './Counter.module.scss';
 
-export function Counter() {
-  const count = useAppSelector(selectIndex);
+export function ReviewCmp() {
+
+  const { id,name,job,image,text } = useAppSelector(selectReview);
   const dispatch = useAppDispatch();
+
 
   //const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <div>
-      
-      
-      {/* <div className={styles.row}>
+      <p>{id}</p>
+      <p>{name}</p>
+      <p>{job}</p>
+      <p>{text}</p>
+      <div>
+        <button onClick={() => dispatch(decrement())} >&lt;</button>
+        <button onClick={() => dispatch(increment())} >&gt;</button>
+      </div>
+      <button onClick={() => dispatch(random())}>Surprise me plz ☺️</button>
+    </div>
+  )
+}
+
+/*
+ /* <div className={styles.row}>
         <button
           className={styles.button}
           aria-label="Decrement value"
@@ -61,7 +76,4 @@ export function Counter() {
         >
           Add If Odd
         </button>
-      </div> */}
-    </div>
-  );
-}
+      </div> */
