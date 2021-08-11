@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBeer } from 'react-icons/fa';
+import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from 'react-icons/md'
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
@@ -21,20 +22,22 @@ export function ReviewCmp() {
   return (
     <section className={styles.section}>
       
-      <div className={styles.containerInfo}>
-        <span>
-          <FaBeer /> 
-        </span>
+      <div className={styles.containerImg}>
+        <div className={styles.imgIconContainer} >
+          <div className={styles.imgBackground}> 
+            <FaBeer className={styles.imgIcon} /> 
+          </div>
+        </div>
         <img src={image} alt={name} />
       </div>
-      <p>{name}</p>
-      <p>{job}</p>
-      <p>{text}</p>
-      <div>
-        <button onClick={() => dispatch(decrement())} >&lt;</button>
-        <button onClick={() => dispatch(increment())} >&gt;</button>
+      <p className={styles.name}>{name}</p>
+      <p className={styles.besetzung}>{job}</p>
+      <div className={styles.description}>{text}</div>
+      <div className={styles.moveBtnContainer}>
+        <button onClick={() => dispatch(decrement())} ><MdKeyboardArrowLeft /></button>
+        <button onClick={() => dispatch(increment())} ><MdKeyboardArrowRight /></button>
       </div>
-      <button onClick={() => dispatch(random())}>Surprise me plz ☺️</button>
+      <button className={styles.randomBtn} onClick={() => dispatch(random())}>Surprise me 😊</button>
     </section>
   )
 }
