@@ -1,0 +1,33 @@
+
+section {
+
+    box-shadow: 3px 3px 10px rgb(207, 207, 207);
+    border-radius: 0.25rem;
+    border: 2px solid lightgrey;
+    margin-top: 0.5rem;
+    padding: 1rem;
+
+    header {
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.question {
+
+    font: {
+        weight: bold;
+
+    }
+}
+
+.answer {
+    color:grey;
+}
+
+.icon {
+
+    font-size: 2rem;
+    
+}

@@ -1,19 +1,22 @@
 import React, {FC} from 'react'
 import QuestionCmp from './QuestionCmp'
 import Question from '../Types/Question'
+import './Questionaire.scss'
 
 type QuestionaireProps = {
     questions: Question[];
 }
 
+/*question}*/
+
 const Questionaire: FC<QuestionaireProps> = ({questions}) => {
 
     return (
-        <div>
+        <div className="container">
             <h1>Questions and answers about login</h1>
             <div>
             {questions.map((question) => {
-                return  <QuestionCmp {...question}></QuestionCmp>
+                return  <QuestionCmp {...question }  ></QuestionCmp>
             })}
             </div>
         </div>
