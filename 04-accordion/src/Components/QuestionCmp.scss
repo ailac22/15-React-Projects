@@ -1,33 +1,73 @@
+@use '../Style/basics';
+
+
 
 section {
 
     box-shadow: 3px 3px 10px rgb(207, 207, 207);
     border-radius: 0.25rem;
     border: 2px solid lightgrey;
-    margin-top: 0.5rem;
-    padding: 1rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
 
     header {
 
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
 .question {
 
+    letter-spacing: 0.1rem;
     font: {
         weight: bold;
 
     }
 }
 
+
+$animation:  max-height 0.1s, color 0.1s  linear;
+
 .answer {
+
+
+    padding-bottom: 1.5rem;
+
     color:grey;
+    opacity:1;
+    max-height: 80px;
+    transition: $animation;
 }
 
-.icon {
+.answerHidden {
 
-    font-size: 2rem;
-    
+    color:transparent;
+    opacity:0;
+    max-height: 0;
+    padding-bottom: none;
+    color:transparent;
+    transition: $animation;
+}
+
+
+.toggleButton {
+
+
+    background: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    $size: 2rem;
+
+    width:$size;
+    height:$size;
+
+    background-color: lightgrey;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
 }

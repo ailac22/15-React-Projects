@@ -13,7 +13,7 @@ const Questionaire: FC<QuestionaireProps> = ({questions}) => {
 
     return (
         <div className="container">
-            <h1>Questions and answers about login</h1>
+            <h1 className='title'>Questions and answers about login</h1>
             <div>
             {questions.map((question) => {
                 return  <QuestionCmp {...question }  ></QuestionCmp>

@@ -4,7 +4,15 @@
     border-radius: 1rem;
     display: flex;
     max-width: 60rem;
-    padding: 1em 2em;
+    padding: 2em 2em;
     flex-direction: row;
 }
 
+.title {
+
+    text-transform: capitalize;
+    margin-right: 3rem;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+}
