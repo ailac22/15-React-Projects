@@ -16,7 +16,7 @@ const Questionaire: FC<QuestionaireProps> = ({questions}) => {
             <h1 className='title'>Questions and answers about login</h1>
             <div>
             {questions.map((question) => {
-                return  <QuestionCmp {...question }  ></QuestionCmp>
+                return  <QuestionCmp {...question } key={question.id}  ></QuestionCmp>
             })}
             </div>
         </div>

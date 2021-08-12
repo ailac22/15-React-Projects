@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react'
+import React, {FC} from 'react'
 import Question from '../Types/Question'
 import './QuestionCmp.scss'
 import { HiPlus, HiMinus } from 'react-icons/hi'
