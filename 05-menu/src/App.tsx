@@ -26,17 +26,22 @@ function App() {
       setDishes(dishData.filter((dish) => { return dish.category === category}))
   }
 
+  //container mx-auto
+
   return (
-    <main className='bg-blue-300'>
-      <div className='container mx-auto text-center'>
-        <h1 className='underline text-3xl'>Our menu</h1>
+    <main className='bg-gray-300 flow-root'>
+      <div className='text-center mx-auto flex items-center flex-col bg-red-200 max-w-5xl'>
+        <h1 className='blue-underline my-10'> Our menu </h1>
         <CategoriesCmp categories={allCategories} filterByCategory={filterByCategory}></CategoriesCmp>
+        <section>
         { dishes.map((dish) => {
           return <DishCmp dish={dish}></DishCmp>
         }) }
+        </section>
       </div>
 
     </main>
+
   );
 }
 
