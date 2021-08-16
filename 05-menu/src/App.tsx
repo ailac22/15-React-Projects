@@ -29,11 +29,11 @@ function App() {
   //container mx-auto
 
   return (
-    <main className='bg-gray-300 flow-root'>
-      <div className='text-center mx-auto flex items-center flex-col bg-red-200 max-w-5xl'>
-        <h1 className='blue-underline my-10'> Our menu </h1>
+    <main className='bg-grey-50 flow-root'>
+      <div className='text-center mx-auto flex items-center flex-col md:max-w-6xl w-10/12'>
+        <h1 className='blue-underline mt-20 mb-10 capitalize'> Our menu </h1>
         <CategoriesCmp categories={allCategories} filterByCategory={filterByCategory}></CategoriesCmp>
-        <section>
+        <section className='grid lg:grid-cols-2 grid-cols-1 justify-between md:gap-3 gap-y-6 mb-12'>
         { dishes.map((dish) => {
           return <DishCmp dish={dish}></DishCmp>
         }) }

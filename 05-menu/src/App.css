@@ -1,5 +1,15 @@
+
+
+:root {
+
+  --main-color: #FDBA74;
+}
 .blue-underline {
   
   text-decoration: underline;
-  text-decoration-color: blue;
+  text-decoration-color: var(--main-color);
+}
+
+.min-width-vw {
+  min-width: 90%;
 }

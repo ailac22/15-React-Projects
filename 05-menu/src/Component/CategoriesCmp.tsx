@@ -15,7 +15,7 @@ const CategoriesCmp: FC<CategoriesProps> = ({categories, filterByCategory}) => {
     return (
     <div className='space-x-10 mb-10'>
     {categories.map((category: Category) => {
-        return <button className='bg-'
+        return <button className=' p-2 rounded text-yellow-500 hover:bg-main hover:text-white duration-500 capitalize'
         onClick={() => {filterByCategory(category)}}>{ category }</button>;
     })}
     </div>
