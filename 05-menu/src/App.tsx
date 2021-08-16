@@ -29,7 +29,7 @@ function App() {
   //container mx-auto
 
   return (
-    <main className='bg-grey-50 flow-root'>
+    <main className='bg-gray-100 flow-root'>
       <div className='text-center mx-auto flex items-center flex-col md:max-w-6xl w-10/12'>
         <h1 className='blue-underline mt-20 mb-10 capitalize'> Our menu </h1>
         <CategoriesCmp categories={allCategories} filterByCategory={filterByCategory}></CategoriesCmp>
