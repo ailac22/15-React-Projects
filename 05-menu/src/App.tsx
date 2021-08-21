@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './tailwind.output.css';
 import DishCmp from './Component/DishCmp'

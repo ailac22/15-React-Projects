@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import data from './data'
 import  Questionaire  from './Components/Questionaire'

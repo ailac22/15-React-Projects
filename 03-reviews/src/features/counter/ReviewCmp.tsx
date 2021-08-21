@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaBeer } from 'react-icons/fa';
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from 'react-icons/md'
 
@@ -13,7 +13,7 @@ import styles from './ReviewCmp.module.scss';
 
 export function ReviewCmp() {
 
-  const { id,name,job,image,text } = useAppSelector(selectReview);
+  const { name,job,image,text } = useAppSelector(selectReview);
   const dispatch = useAppDispatch();
 
 

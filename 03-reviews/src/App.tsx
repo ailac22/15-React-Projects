@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import { ReviewCmp } from './features/counter/ReviewCmp';
 import './App.scss';
-import { Review } from './Types/Review'
 
 function App() {
   return (

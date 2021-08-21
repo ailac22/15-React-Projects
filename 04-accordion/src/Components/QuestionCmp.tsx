@@ -8,10 +8,6 @@ const QuestionCmp: FC<Question> = ({id,info,title}) => {
 
     const [on, toggle] = useToggle(false)
 
-    let answer;
-    if (on)
-        answer = <p className='answer'>'{info}</p>;
-
     //  {answer}
     return (
         <section>
